@@ -1,0 +1,27 @@
+#### 취재기사 워드 클라우드 제작
+
+![더뉴히어로즈](https://user-images.githubusercontent.com/46768786/63542424-4ca3a680-c55b-11e9-8065-54d54a90cc22.png)
+~~~R
+setwd("c:\\")
+library("KoNLP")
+library("wordcloud")
+library("RColorBrewer")
+useSejongDic()
+New <- readLines("Thenew.txt")
+New2 <- sapply(New, extractNoun,USE.NAMES=F)
+New3 <- unlist(New2)
+New3 <- Filter(function(x){nchar(x)>=2}, New3)
+New3
+
+New3 <- gsub("","",New3)
+
+
+write(unlist(New3),"cloudNew.txt")
+GoNew <- read.table("cloudNew.txt")
+wordcount <- table(GoNew)
+wordcount
+
+library(RColorBrewer)
+palete <- brewer.pal(9,"Set1") 
+wordcloud(names(wordcount),freq=wordcount, scale=c(5,1), rot.per=0.1, min.freq=3, random.order=F, color=T, colors=palete)
+~~~
