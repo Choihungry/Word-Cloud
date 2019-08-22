@@ -1,21 +1,21 @@
-### Word-Cloud
-cosmos 개인 독후감 첫 워드 클라우드 제작
+## Word-Cloud
+###cosmos 개인 독후감 첫 워드 클라우드 제작
 
 ![첫](https://user-images.githubusercontent.com/46768786/63535811-46a6c900-c54d-11e9-99a9-c0246a73004b.png)
 
-setwd("C:\\studygo")
+####setwd("C:\\studygo")
 install.packages("KoNLP")
 install.packages("wordcloud")
 library("KoNLP")
 library("wordcloud")
 library("RColorBrewer")
-# useSejongDic()
+useSejongDic()
 cosmos <- readLines("cloud.txt")
 cosmos2 <- sapply(cosmos, extractNoun,USE.NAMES=F)
 cosmos3 <- unlist(cosmos2)
 cosmos3 <- Filter(function(x){nchar(x)>=2}, cosmos3)
 
- ----
+ 
  cosmos3 <- gsub("잘알고","",cosmos3)
  cosmos3 <- gsub("자체","",cosmos3)
  cosmos3 <- gsub("세계","",cosmos3)
@@ -34,7 +34,7 @@ cosmos3 <- Filter(function(x){nchar(x)>=2}, cosmos3)
  cosmos3 <- gsub("첫이였던","",cosmos3)
  cosmos3 <- gsub("다시한번","",cosmos3)
  ... 길었던 순간
- ----
+ 
  
 
 
