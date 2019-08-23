@@ -80,6 +80,8 @@ wordcloud(names(wordcount),freq=wordcount, scale=c(5,1), rot.per=0.1, min.freq=3
 ~~~
 
 #### -> 수정
+![콘삭스 워드클라우드](https://user-images.githubusercontent.com/46768786/63603504-c6439f00-c604-11e9-9a65-fb33d7d89f94.png)
+
 ~~~R
 setwd("c:\\studygo")
 library("KoNLP")
