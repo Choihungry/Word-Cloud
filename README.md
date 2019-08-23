@@ -78,5 +78,26 @@ library(RColorBrewer)
 palete <- brewer.pal(9,"Set1") 
 wordcloud(names(wordcount),freq=wordcount, scale=c(5,1), rot.per=0.1, min.freq=3, random.order=F, color=T, colors=palete)
 ~~~
+
+#### -> 수정
+~~~R
+setwd("c:\\studygo")
+library("KoNLP")
+library("wordcloud")
+library("RColorBrewer")
+useSejongDic()
+New <- readLines("oh.txt")
+New3 <- unlist(New)
+New3
+New3 <- gsub("","",New3)
+write(unlist(New3),"Friend.txt")
+GoNew <- read.table("Friend.txt")
+wordcount <- table(GoNew)
+wordcount
+
+library(RColorBrewer)
+palete <- brewer.pal(9,"Set1") 
+wordcloud(names(wordcount),freq=wordcount, scale=c(4,0.8), rot.per=0.3, min.freq=1, random.pro=F, random.color=T, colors=palete)
+~~~
           
 
