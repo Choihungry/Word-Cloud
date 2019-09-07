@@ -99,7 +99,8 @@ wordcount
 
 library(RColorBrewer)
 palete <- brewer.pal(9,"Set1") 
-wordcloud(names(wordcount),freq=wordcount, scale=c(4,0.8), rot.per=0.3, min.freq=1, random.pro=F, random.color=T, colors=palete)
+wordcloud(names(wordcount),freq=wordcount, scale=c(4,0.8), rot.per=0.3, min.freq=1, 
+random.pro=F, random.color=T, colors=palete)
 ~~~
           
 
